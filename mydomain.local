@@ -1,0 +1,13 @@
+$ORIGIN  mydomain.local. 
+$TTL 14400
+@ 	IN  SOA centos.mydomain.local. admin.mydomain.local. (
+  		20190101	 ; Serial
+  		3H		 ; Refresh
+  		1H		 ; Retry
+  		2H		 ; Expire
+		2H		); Negative Cache TTL
+;
+  IN NS centos.mydomain.local. ;
+centos 		IN A 192.168.4.224;
+gateway 	IN A 192.168.4.2;
+

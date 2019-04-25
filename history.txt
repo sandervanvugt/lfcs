@@ -1,0 +1,576 @@
+touch file{1..9}
+ls
+exit
+find / -name "hosts" 
+find / -name "hosts" > /tmp/hostfiles
+find / -name "host" 
+find / -name "host*" 
+find / -user student 
+useradd linda
+su - linda
+find / -user linda
+find / -user linda -exec cp {} /root/\;
+find / -user linda -exec cp {} /root/ \;
+find / -perm 4000
+find / -perm /4000
+find / -type f -size +100M
+mkdir -p find/contents ; find /etc -exec grep -l student {} \; -exec cp {} find/contents/ \; 2>/dev/null
+ls find/contents/
+find /etc/ -name '*' -type f | xargs grep "127.0.0.1" 
+ls /etc/hosts ; who
+ls /etc/hhffhyfht ; who
+ls /etc/hosts && who
+ls /etc/hhffhyfht && who
+ls /etc/hhffhyfht || who
+ls /etc/hosts || who
+vim countdown
+chmod +x countdown 
+./countdown 10
+sed -n 5p /etc/passwd
+echo hello > myfile
+sed -i s/hello/byebye/g myfile 
+cat myfile 
+echo hello hello > myfile
+cat myfile 
+sed -i s/hello/byebye/ myfile 
+cat myfile 
+sed -i s/hello/byebye/g myfile 
+sed -i -e '1d' myfile 
+cat myfile 
+awk -F : '{ print $4 }' /etc/passwd
+awk -F : '/linda/ { print $4 }' /etc/passwd
+vim countdown 
+./countdown 1
+vim countdown 
+echo $(( 2 + 2 ))
+echo $(( 99 / 3 ))
+echo $(( 99 / 2 ))
+vim countdown 
+./countdown 1
+ls
+ls -l
+chmod +x countdown 
+vim countdown 
+./countdown 5
+TODAY=wednesday
+echo $TODAY
+echo ${TODAY}
+echo $(( TODAY ))
+vim countdown 
+./countdown 5
+cat /etc/passwd
+head -n 1 /etc/passwd
+less /etc/shadow
+vim /etc/login.defs
+ls -al /etc/skel/
+touch /etc/skell/hello
+touch /etc/skel/hello
+useradd lisa
+ls -a /home/lisa.
+ls -a /home/lisa/
+su - linda
+grep 1001 /etc/passwd
+useradd -u 1001 lori
+mkdir /etc/skel/Downloads
+mkdir /etc/skel/Pictures
+useradd bob
+ls -l /home/bob/
+vipw
+history | grep users
+history | grep usera
+useradd --help
+cat /etc/group
+groupadd sales
+groupadd account
+useradd lucy -G sales
+id lucy
+passwd lucy
+./countdown 20
+vim countdown 
+./countdown 20
+usermod -G sales linda
+id linda
+usermod -G wheel linda
+id linda
+usermod -aG sales linda
+id linda
+chage --help
+chage linda
+grep linda /etc/shadow
+passwd linda
+echo password | passwd --stdin linda
+grep linda /etc/shadow
+passwd -l linda
+grep linda /etc/shadow
+passwd -u linda
+exit
+visudo
+exit
+grep wheel /etc/group
+su - linda
+visudo
+exit
+visudo
+exit
+man 7 capabilities
+tail /var/log/audit/audit.log 
+strace ls
+man auditctl
+mkdir -p /data/sales
+mkdir -p /data/account
+tail -n 5 /etc/groups
+tail -n 5 /etc/group
+useradd -G account betty
+usermod -aG account bob 
+tail -n 5 /etc/group
+cd /data
+ls -l
+chmod 770 account
+chmod 770 sales
+ls -l
+chgrp account account
+chgrp sales sales
+ls -l
+su - bob
+su - betty
+chmod g+s *
+ls -l
+su - bob
+su - betty
+chmod +t *
+ls -l
+su - betty
+history
+cd
+cd /home/linda/
+vim playme
+chmod +x playme
+su - linda
+chmod u+s playme
+ls -l
+find / -perm /4000 -exec ls -l {} \; 2>/dev/null
+ls -l /etc/shadow
+history
+cd
+./countdown 10
+yum repolist
+cd /etc/yum.repos.d/
+ls
+vim CentOS-Base.repo 
+yum search nmap
+yum install nmap-frontend
+yum list
+yum list installed
+yum search sealert
+yum provides */sealert
+yum groups list
+yum update
+cd
+ip a
+ip address show
+ip a
+ifconfig
+man ifconfig
+ip -s link
+ip a
+ip addr add dev ens33 10.0.0.10/24
+ip a
+ifconfig
+ifconfig -a
+ldd $(which ifconfig)
+ldd $(which ip)
+cat /etc/os-release 
+cat /etc/redhat-release 
+systemctl start NetworkManager
+systemctl status NetworkManager
+nmtui
+systemctl disable --now NetworkManager
+systemctl enable systemd-networkd
+yum search networkd
+yum install systemd-networkd
+systemctl enable --nopw systemd-networkd
+systemctl enable --now systemd-networkd
+yum install systemd-resolved
+systemctl enable --now systemd-resolved
+rm /etc/resolv.conf
+ln -s /run/systemd/resolve/resolv.conf /etc/resolv.conf
+mkdir /etc/systemd/network
+vim /etc/systemd/network/20-dhcp.network
+systemctl restart systemd-networkd
+ip a
+systemctl status systemd-networkd
+reboot
+history
+ip a
+systemctl status systemd-networkd
+systemctl status NetworkManager
+rpm -qf $(which ifconfig)
+which ifconfig
+rpm -ql net-tools
+rpm -ql net-tools | grep bin
+yum remove net-tools
+ifconfig
+./countdown 10
+poweroff
+lsblk
+parted /dev/sdb
+lsblk
+gdisk /dev/sdc
+lsblk
+fdisk /dev/sda
+lsblk
+cat /proc/partitions 
+partprobe
+cat /proc/partitions 
+parted /dev/sda
+parted /dev/sdb
+gdisk /dev/sda
+fdisk /dev/sdb
+lsblk
+mkfs.ext4 /dev/sdb1
+mount /dev/sdb1 /mnt
+mount
+mkdir /what
+vim /etc/fstab
+mount -a
+mount
+history
+visudo
+su - student
+visudo
+exit
+visudo
+exit
+visudo
+vim /etc/fstab
+cd /what
+mount | grep what
+vim myscript
+chmod +x myscript 
+./myscript
+bash myscript
+cd /run/systemd/
+ls
+cd generator
+ls
+cd ../generator.late/
+ls
+cd -
+ls
+vim boot.mount 
+blkid
+cat /etc/fstab
+tune2fs --help
+tune2fs -L what /dev/sdb1
+blkid
+vim /etc/fstab
+umount /what
+mount -a
+mount
+xfs_admin --help
+xfs_admin -L cow /dev/sda1
+umount /dev/sda1
+xfs_admin -L cow /dev/sda1
+blkid
+vim /etc/fstab
+cd
+lsblk
+gdisk /dev/sdb
+partprobe
+lsblk
+pvcreate /dev/sdb3
+pvs
+pvdisplay
+vgcreate --help | less
+vgcreate -s 16m vgdata /dev/sdb3
+vgs
+pvs
+lvcreate -n lvdata -L 1G vgdata
+lvcreate -n lvdata -l 63 vgdata
+lvs
+mkfs.xfs /dev/vgdata/lvdata
+mkdir /lvdata
+vim /etc/fstab
+mount -a
+mount
+ls -l /dev/mapper/vgdata-lvdata /dev/vgdata/lvdata 
+history
+df -h
+dd if=/dev/zero of=/lvdata/bigfile bs=1M
+df -h
+lvs
+df -h
+vgs
+gdisk /dev/sdb
+partprobe
+vgs
+vgextend vgdata /dev/sdb4
+pvs
+lvs
+vgs
+lvextend --help | less
+lvextend -r -l +10%FREE /dev/vgdata/lvdata 
+lvresize -r -L +125M /dev/vgdata/lvdata
+lvs
+df -h
+history
+./countdown 10
+poweroff
+lsblk
+mdadm --create /dev/md0 --level 5 --raid-devices 3 /dev/sd{d,e,f}
+cat /dev/mdstat
+cat /proc/mdstat
+mdadm --detail --scan --verbose >> /etc/mdadm.conf
+vim /etc/mdadm.conf 
+mkfs.ext4 -L RAID /dev/md0
+vim /etc/fstab
+reboot
+mount
+df -h
+tail -n 1 /etc/fstab
+history
+tail -n 1 /etc/fstab
+vim /etc/default/grub 
+grub2-mkconfig -o /boot/grub2/grub.cfg
+vim /boot/grub2/grub.cfg 
+reboot
+grub2-setpassword
+reboot
+history
+systemctl --type help
+systemctl list-units
+systemctl cat sshd.service
+systemctl status sshd
+kill -9 7510
+systemctl status sshd
+systemctl cat sshd.service
+systemctl status sshd
+yum install httpd
+yum install vsftpd
+systemctl edit httpd.service
+systemctl cat sshd.service
+systemctl edit httpd.service
+cd /etc/systemd/system/
+ls
+cd httpd.service.d/
+ls
+systemctl cat httpd.service
+ps aux | grep http
+ps aux | grep ftp
+systemctl start httpd
+ps aux | grep ftp
+systemctl status httpd
+ps aux | grep ftp
+systemctl cat sshd.service
+systemctl edit httpd.service
+systemctl cat httpd.service
+systemctl daemon-reload
+systemctl stop httpd
+systemctl start httpd
+systemctl status httpd
+ps aux | grep ftp
+systemctl show httpd.service
+systemctl list-dependencies multi-user.target
+systemctl list-dependencies emergency.target
+systemctl isolate emergency.target
+systemctl list-units
+systemctl set-default graphical.target
+systemctl get-default
+reboot
+cd /usr/lib/systemd/system
+ls *timer
+cat fstrim.timer 
+cat fstrim.service 
+systemctl enable --now fstrim.timer
+systemctl list-timers
+man 7 systemd.time
+cat /usr/lib/systemd/system/tmp.mount 
+pwd
+cp tmp.mount /etc/systemd/system/what.mount
+vim /etc/fstab
+vim /etc/systemd/system/what.mount
+mount | grep what
+vim /etc/systemd/system/what.mount
+systemctl cat what.mount
+systemctl daemon-reload
+systemctl cat what.mount
+umount /what
+mount | grep what
+systemctl enable --now what.mount
+mount | grep what
+systemctl status what.mount
+systemctl disable --now what.mount
+vim /etc/systemd/system/what.automount
+vim /etc/systemd/system/what.mount
+vim /etc/systemd/system/what.automount
+systemctl daemon-reload
+systemctl enable what.automount
+umount /what
+touch /what/where
+mount | grep what
+systemctl start what.automount
+touch /what/where2
+mount | grep what
+cd
+./countdown 20
+ps aux
+ps -ef
+ps aux | less
+ps fax | less
+top
+poweroff
+top
+less /proc/meminfo 
+dd if=/dev/zero of=/dev/null &
+top
+poweroff
+exit
+top
+lscpu 
+cd /sys
+ls
+cd bus
+ls
+cd cpu/
+ls
+cd devices/
+ls
+pwd
+ls cpu2
+cat cpu2/online 
+echo 0> cpu2/online 
+echo 0> cpu1/online 
+lscpu
+top
+pwd
+ls
+cd cpu2
+ls
+cat online 
+echo 0 > online 
+lscpu
+cd ../cpu1
+echo 0 > online 
+lscpu
+top
+cd
+dd if=/dev/zero of=/dev/null &
+top
+renice --help | less
+renice --help 
+ps aux | grep dd
+renice 10 17902
+top
+renice 10 17902
+top
+killall dd
+./countdown 10
+history
+cd /var/www/html/
+ls
+cd ..
+mkdir sales account
+vim sales/index.html
+vim account/index.html
+ip a
+vim /etc/hosts
+ping account
+ping sales
+cd /etc/httpd/conf.d/
+vim /etc/httpd/conf/httpd.conf 
+pwd
+vim account.conf
+cp account.conf sales.conf
+vim sales.conf 
+systemctl restart httpd
+systemctl status httpd
+curl account.example.com
+curl sales.example.com
+cat account.conf 
+cat sales.conf 
+history | tail -n 14
+cd
+touch removeme
+chattr +i removeme
+rm -rf removeme 
+lsattr *
+chattr -i removeme 
+rm -f removeme 
+cp /etc/fstab .
+cp /etc/fstab /tmp
+cd /tmp
+ls -l fstab
+getfacl fstab
+setfacl -m u:linda:rw fstab
+getfacl fstab
+cd /data
+ls
+ls -k
+ls -l
+setfacl -m -R g:account:rx sales
+setfacl -R -m g:account:rx sales
+grep sales /etc/group
+su - linda
+setfacl -m d:g:account:rx sales
+history
+cd
+systemctl disable --now firewalld
+yum search iptables
+iptables iptables-services iptables-utils
+yum install -y iptables-services iptables-utils
+iptables -L
+iptables -A INPUT -s 192.168.4.2 -p tcp --dport 22 -j REJECT
+ip a
+iptables -A INPUT -s 192.168.4.1 -p tcp --dport 22 -j REJECT
+history
+iptables -I INPUT 1 -s 192.168.4.1 -j LOG
+iptables -L
+cd /var/log
+ls
+tail -f messages 
+history
+curl http://sandervanvugt.com
+curl https://sandervanvugt.com
+curl https://nu.nl
+yum install -y elinks
+elinks nu.nl
+ping nu.nl
+elinks http://nu.nl
+curl -X https://nu.nl
+iptables -A OUTPUT -p tcp --dport 80, 443 -j DROP
+iptables -A OUTPUT -p tcp --dport 80 -j DROP
+iptables -A OUTPUT -p tcp --dport 443 -j DROP
+iptables -L
+curl https://nu.nl
+cd /etc/sysconfig/
+ls
+cat iptables
+iptables-save 
+iptables-save > /etc/sysconfig/iptables
+cat iptables
+systemctl status iptables
+systemctl enable --now iptables
+iptables
+iptables -L
+history
+man tar
+tar cvJf /tmp/home.tar /home
+history
+cd
+vim /etc/ssh/sshd_config 
+systemctl restart sshd
+ssh root@localhost
+ssh linda@localhost
+vim /etc/ssh/sshd_config 
+grep vmx /proc/cpuinfo 
+poweroff
+grep vmx /proc/cpuinfo 
+systemctl status libvirtd
+virsh list
+systemctl start graphical.target
+#virsh list
+#virsh start vm1
+#virsh edit vm1
+#virsh autostart vm1
+iptables -F
+history -w
