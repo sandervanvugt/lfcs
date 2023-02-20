@@ -1,0 +1,24 @@
+#cloud-config
+
+preserve_hostname: false
+fqdn: "fedora02.example.local"
+
+system_info:
+  default_user:
+    name: "admin"
+    plain_text_passwd: "password"
+    lock_passwd: false
+    groups: ["wheel"]
+
+packages:
+  - "wget"
+  - "bash-completion"
+
+package_update: true
+package_reboot_if_required: true
+
+write_files:
+  - path: "/root/hello.txt"
+    owner: "root:root"
+    permissions: '0644'
+    content: "hello folks"

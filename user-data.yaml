@@ -1,0 +1,9 @@
+#cloud-config
+
+system_info"
+  default_user:
+    name: "admin"
+    plan_text_passwd: "password"
+    lock_passwd: false
+    groups: ["wheel"]
+
